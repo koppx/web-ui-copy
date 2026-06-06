@@ -2,8 +2,8 @@
 
 # ✨ web-ui-copy
 
-### Pixel-perfect webpage cloning for Codex agents
-### 面向 Codex Agent 的高保真网页复制 Skill
+### Pixel-perfect webpage cloning for AI agents
+### 面向 AI Agent 的高保真网页复制 Agent Skill
 
 **Exact clone · Style copy · Font fidelity · Layout parity · Screenshot recreation**
 
@@ -15,7 +15,7 @@
 
 ## 🚀 What is this?
 
-`web-ui-copy` is a Codex skill for copying frontend UI with high visual fidelity.
+`web-ui-copy` is an **Agent Skill** for copying frontend UI with high visual fidelity. It can be used by Codex and by other AI-agent systems that support local skills, workflow instructions, or reusable agent capabilities.
 
 It is designed for two common but very different tasks:
 
@@ -24,7 +24,7 @@ It is designed for two common but very different tasks:
 
 ## 🚀 这是什么？
 
-`web-ui-copy` 是一个用于 **高保真复制前端页面** 的 Codex Skill。
+`web-ui-copy` 是一个用于 **高保真复制前端页面** 的 **Agent Skill**。它不只面向 Codex，也适用于其他支持本地 Skill、工作流指令或可复用 Agent 能力的 AI Agent。
 
 它主要解决两类需求：
 
@@ -32,6 +32,20 @@ It is designed for two common but very different tasks:
 2. **风格 copy，内容替换**：保留原网页的字体、版式、颜色、组件风格，但换成你自己的内容。
 
 ---
+
+## 🤖 Agent Skill, not Codex-only / 不仅是 Codex Skill
+
+This repository describes `web-ui-copy` as a general **Agent Skill**:
+
+- Codex can use it as a local `SKILL.md`;
+- other AI coding agents can use it as a reusable UI-cloning workflow;
+- teams can adapt the same instructions into their own agent platforms, prompts, or automation pipelines.
+
+本仓库中的 `web-ui-copy` 是一个通用的 **Agent Skill**：
+
+- Codex 可以把它作为本地 `SKILL.md` 使用；
+- 其他 AI Coding Agent 可以把它作为可复用的 UI 复制工作流；
+- 团队也可以把这套方法迁移到自己的 Agent 平台、Prompt 模板或自动化流水线中。
 
 ## ⚡ Core modes / 核心模式
 
@@ -214,11 +228,11 @@ web-ui-copy/
 └── SKILL.md
 ```
 
-`SKILL.md` is the actual Codex skill definition.
+`SKILL.md` is the actual Agent Skill definition. Codex can read it directly, and other agent systems can adapt it as a reusable workflow instruction.
 
 `README.md` is human-facing documentation.
 
-`SKILL.md` 是 Codex 实际读取的 Skill 定义文件。
+`SKILL.md` 是实际的 Agent Skill 定义文件。Codex 可以直接读取，其他 Agent 系统也可以将其作为可复用工作流指令进行适配。
 
 `README.md` 是给人看的说明文档。
 
@@ -226,9 +240,9 @@ web-ui-copy/
 
 ## 🛠️ Installation / 安装
 
-Copy this repository into your Codex skills directory, or install it through your preferred Codex skill installation flow.
+Copy this repository into your Agent/Codex skills directory, or install it through your preferred AI-agent skill installation flow.
 
-将本仓库复制到你的 Codex skills 目录，或者使用你习惯的 Codex Skill 安装方式。
+将本仓库复制到你的 Agent / Codex skills 目录，或者使用你习惯的 AI Agent Skill 安装方式。
 
 Required file:
 
