@@ -60,6 +60,38 @@ It is designed for two common but very different tasks:
 
 ---
 
+## 🧰 Included scripts / 内置脚本
+
+This is not just a prompt. `web-ui-copy` ships with practical scripts for repeatable UI cloning work:
+
+这不只是一个 Prompt。`web-ui-copy` 内置了一组实用脚本，让 UI 复制流程更稳定、可复用：
+
+| Script | Purpose | 用途 |
+| --- | --- | --- |
+| `scripts/mirror_webpage.py` | Capture HTML and mirror visual assets into a local `site/` tree. | 抓取 HTML，并镜像 CSS / JS / 图片 / 字体 / 视频等视觉资源到本地。 |
+| `scripts/style_snapshot.js` | Capture computed styles and bounding boxes for selected DOM nodes. | 抽取指定 DOM 节点的 computed style 和位置尺寸。 |
+| `scripts/compare_style_snapshots.py` | Compare source vs copy snapshots and report style/geometry drift. | 对比原网页和复制页的字体、颜色、间距、布局差异。 |
+| `scripts/extract_layout_blueprint.py` | Convert screenshot regions into a layout blueprint JSON. | 从截图中记录区块和元素区域，生成布局蓝图 JSON。 |
+
+Quick mirror:
+
+```bash
+python scripts/mirror_webpage.py --url https://example.com --out captures/example
+python3 -m http.server 8080 -d captures/example/site
+```
+
+Quick style QA:
+
+```bash
+python scripts/compare_style_snapshots.py \
+  --source source-style.json \
+  --copy copy-style.json \
+  --out style-diff.json \
+  --ignore-text
+```
+
+---
+
 ## 🧠 Why this skill exists / 为什么需要它？
 
 Handwritten UI recreation often looks close at first, but fails on details:
@@ -227,7 +259,12 @@ A good clone should pass these checks:
 ```text
 web-ui-copy/
 ├── README.md
-└── SKILL.md
+├── SKILL.md
+└── scripts/
+    ├── mirror_webpage.py
+    ├── style_snapshot.js
+    ├── compare_style_snapshots.py
+    └── extract_layout_blueprint.py
 ```
 
 `SKILL.md` is the actual Agent Skill definition: the reusable workflow that tells an AI agent how to perform high-fidelity UI cloning.

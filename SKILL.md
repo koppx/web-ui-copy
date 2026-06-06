@@ -16,6 +16,32 @@ Handwritten reconstruction is only a fallback. It commonly drifts in heading res
 - **Style-only clone**: recreate layout/components after extracting computed styles. Use this only when the user wants a new implementation or the original source/assets cannot be mirrored.
 - **Screenshot-only design clone**: infer layout from image, then validate against screenshot. Warn that dynamic text/content cannot be guaranteed without source.
 
+## Bundled scripts
+Prefer these scripts instead of rewriting ad-hoc tooling for common tasks:
+
+- `scripts/mirror_webpage.py`: capture source HTML and mirror same-origin visual assets into a local `site/` tree. Use this first for exact clone and style-copy tasks when the live URL is available.
+- `scripts/style_snapshot.js`: paste/evaluate in the browser to capture computed styles and bounding boxes for selected source/copy nodes.
+- `scripts/compare_style_snapshots.py`: compare two style snapshot JSON files and report font, color, spacing, and geometry differences.
+- `scripts/extract_layout_blueprint.py`: create a manual region/section blueprint from a screenshot for screenshot-only or visual QA workflows.
+
+Example exact capture:
+
+```bash
+python scripts/mirror_webpage.py --url https://example.com --out captures/example
+python3 -m http.server 8080 -d captures/example/site
+```
+
+Example style diff:
+
+```js
+// In source and copy pages after loading scripts/style_snapshot.js:
+webUiCopyStyleSnapshot(['h1', '.hero', '.card', '.button'])
+```
+
+```bash
+python scripts/compare_style_snapshots.py --source source-style.json --copy copy-style.json --out style-diff.json --ignore-text
+```
+
 ## Style copy / new content workflow
 Use this when the user wants the copied page to look like the source, with **identical font rendering and component styling**, but with different text/content.
 
@@ -56,6 +82,7 @@ Use this when the user wants the copied page to look like the source, with **ide
 ## Exact source mirror workflow
 1. **Capture immutable source artifacts**
    - Save the server-rendered HTML to `source-capture/source.html`.
+   - Prefer running `scripts/mirror_webpage.py --url <url> --out <capture-dir>` to create `source-capture/`, `site/`, and `mirror-manifest.json`.
    - Save all same-origin CSS, JS modules, images, SVGs, videos, fonts, and manifest assets referenced by `src`, `href`, CSS `url(...)`, JS static imports, preloads, and framework islands.
    - Keep original filenames and hashed asset names when possible (`/_astro/foo.hash.js`, `/assets/foo.hash.css`, etc.).
 
