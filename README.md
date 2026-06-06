@@ -2,8 +2,8 @@
 
 # ✨ web-ui-copy
 
-### Pixel-perfect webpage cloning for AI agents
-### 面向 AI Agent 的高保真网页复制 Agent Skill
+### Pixel-perfect UI cloning Agent Skill
+### 高保真网页复制 Agent Skill
 
 **Exact clone · Style copy · Font fidelity · Layout parity · Screenshot recreation**
 
@@ -15,7 +15,7 @@
 
 ## 🚀 What is this?
 
-`web-ui-copy` is an **Agent Skill** for copying frontend UI with high visual fidelity. It can be used by Codex and by other AI-agent systems that support local skills, workflow instructions, or reusable agent capabilities.
+`web-ui-copy` is an **Agent Skill** for copying frontend UI with high visual fidelity. It turns UI cloning into a repeatable agent workflow: capture the source, mirror the assets, preserve the visual system, and validate the result like a frontend engineer.
 
 It is designed for two common but very different tasks:
 
@@ -24,7 +24,7 @@ It is designed for two common but very different tasks:
 
 ## 🚀 这是什么？
 
-`web-ui-copy` 是一个用于 **高保真复制前端页面** 的 **Agent Skill**。它不只面向 Codex，也适用于其他支持本地 Skill、工作流指令或可复用 Agent 能力的 AI Agent。
+`web-ui-copy` 是一个用于 **高保真复制前端页面** 的 **Agent Skill**。它把 UI 复制变成可复用的 Agent 工作流：抓取源站、镜像资源、保留视觉系统，并像前端工程师一样验证还原结果。
 
 它主要解决两类需求：
 
@@ -33,19 +33,21 @@ It is designed for two common but very different tasks:
 
 ---
 
-## 🤖 Agent Skill, not Codex-only / 不仅是 Codex Skill
+## 🤖 Built as Agent Skills / 以 Agent Skills 方式构建
 
-This repository describes `web-ui-copy` as a general **Agent Skill**:
+`web-ui-copy` packages a battle-tested UI cloning methodology into an **Agent Skill**:
 
-- Codex can use it as a local `SKILL.md`;
-- other AI coding agents can use it as a reusable UI-cloning workflow;
-- teams can adapt the same instructions into their own agent platforms, prompts, or automation pipelines.
+- clear mode selection for exact clone, style copy, screenshot recreation, and clone debugging;
+- source-mirror-first workflow for pixel-level fidelity;
+- computed-style validation for fonts, spacing, colors, and layout;
+- reusable instructions that can be dropped into agent platforms, coding assistants, and automation pipelines.
 
-本仓库中的 `web-ui-copy` 是一个通用的 **Agent Skill**：
+`web-ui-copy` 将一套经过实战验证的 UI 复制方法封装成 **Agent Skills**：
 
-- Codex 可以把它作为本地 `SKILL.md` 使用；
-- 其他 AI Coding Agent 可以把它作为可复用的 UI 复制工作流；
-- 团队也可以把这套方法迁移到自己的 Agent 平台、Prompt 模板或自动化流水线中。
+- 明确区分一比一复制、风格 copy、截图复刻、差异修复；
+- 源码镜像优先，追求像素级还原；
+- 用 computed style 校验字体、间距、颜色和布局；
+- 可作为 Agent 平台、Coding Assistant、自动化流水线里的复用能力。
 
 ## ⚡ Core modes / 核心模式
 
@@ -228,11 +230,11 @@ web-ui-copy/
 └── SKILL.md
 ```
 
-`SKILL.md` is the actual Agent Skill definition. Codex can read it directly, and other agent systems can adapt it as a reusable workflow instruction.
+`SKILL.md` is the actual Agent Skill definition: the reusable workflow that tells an AI agent how to perform high-fidelity UI cloning.
 
 `README.md` is human-facing documentation.
 
-`SKILL.md` 是实际的 Agent Skill 定义文件。Codex 可以直接读取，其他 Agent 系统也可以将其作为可复用工作流指令进行适配。
+`SKILL.md` 是实际的 Agent Skill 定义文件：它定义了 AI Agent 如何执行高保真 UI 复制的可复用工作流。
 
 `README.md` 是给人看的说明文档。
 
@@ -240,9 +242,9 @@ web-ui-copy/
 
 ## 🛠️ Installation / 安装
 
-Copy this repository into your Agent/Codex skills directory, or install it through your preferred AI-agent skill installation flow.
+Copy this repository into your agent skills directory, or adapt `SKILL.md` into your preferred AI-agent workflow system.
 
-将本仓库复制到你的 Agent / Codex skills 目录，或者使用你习惯的 AI Agent Skill 安装方式。
+将本仓库复制到你的 agent skills 目录，或者把 `SKILL.md` 适配到你使用的 AI Agent 工作流系统中。
 
 Required file:
 
